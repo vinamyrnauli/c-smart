@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-SMART: Circular Smart Waste Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-recycle"></i>
+                <h1>C-SMART</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#map">Peta Sampah</a></li>
+                    <li><a href="#framework">Framework</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Smart Waste Management</h1>
+                <h2>Untuk <span class="typed-text"></span></h2>
+                <p>Sistem pengelolaan sampah cerdas berbasis IoT, Blockchain, dan Digital Twin untuk mewujudkan Circular City 5.0 di Indonesia</p>
+                <div class="hero-btns">
+                    <a href="#dashboard" class="btn btn-primary">Lihat Dashboard</a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/main_illustration.png" alt="Smart Waste Management Illustration">
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,181.3C672,181,768,139,864,138.7C960,139,1056,181,1152,170.7C1248,160,1344,96,1392,64L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 class="counter" data-target="32">0</h3>
+                    <p>Peningkatan Efisiensi (%)</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3 class="counter" data-target="30">0</h3>
+                    <p>Pengurangan Emisi (%)</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3 class="counter" data-target="38">0</h3>
+                    <p>Peningkatan Daur Ulang (%)</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-coins"></i>
+                    <h3 class="counter" data-target="27">0</h3>
+                    <p>Pengurangan Biaya (%)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tentang C-SMART</h2>
+                <p>Circular Smart Waste Management with Advanced Real-time Technology</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/csmart_illustration.png" alt="C-SMART Illustration">
+                </div>
+                <div class="about-text">
+                    <h3>Solusi Pengelolaan Sampah Modern untuk Kota Berkelanjutan</h3>
+                    <p>C-SMART adalah framework komprehensif untuk sistem pengelolaan sampah cerdas yang mendukung implementasi ekonomi sirkular dalam konteks Circular City 5.0. Framework ini mengintegrasikan teknologi Internet of Things (IoT), Blockchain, dan Digital Twin untuk menciptakan sistem pengelolaan sampah yang lebih efisien, transparan, dan berkelanjutan.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-globe"></i>
+                            <h4>Berkelanjutan</h4>
+                            <p>Mendukung pencapaian target pengurangan sampah 30% sesuai Perpres Jaktranas</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Efisien</h4>
+                            <p>Mengoptimalkan rute pengumpulan, mengurangi biaya operasional dan emisi karbon</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h4>Partisipatif</h4>
+                            <p>Melibatkan masyarakat dalam sistem pengelolaan sampah melalui aplikasi mobile</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Transparan</h4>
+                            <p>Memanfaatkan blockchain untuk pelacakan dan verifikasi material yang diproses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dashboard Smart Waste Management</h2>
+                <p>Monitor Pengelolaan Sampah Real-time di Kota Jakarta</p>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h3>Ringkasan Operasional</h3>
+                    <div class="dashboard-date" id="current-date">2 Mei 2025</div>
+                </div>
+                <div class="dashboard-content">
+                    <div class="dashboard-card" id="total-bins">
+                        <div class="dashboard-card-header">
+                            <h4>Total Tempat Sampah</h4>
+                            <div class="icon">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                        <div class="dashboard-card-value">568</div>
+                        <div class="dashboard-card-label">
+                            <i class="fas fa-arrow-up up"></i> +12.5% dari bulan lalu
+                        </div>
+                    </div>
+                    <div class="dashboard-card" id="active-bins">
+                        <div class="dashboard-card-header">
+                            <h4>Tempat Sampah Aktif</h4>
+                            <div class="icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="dashboard-card-value">542</div>
+                        <div class="dashboard-card-label">
+                            <i class="fas fa-arrow-up up"></i> +8.3% dari bulan lalu
+                        </div>
+                    </div>
+                    <div class="dashboard-card" id="waste-collected">
+                        <div class="dashboard-card-header">
+                            <h4>Sampah Terkumpul</h4>
+                            <div class="icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                        </div>
+                        <div class="dashboard-card-value">35.8 ton</div>
+                        <div class="dashboard-card-label">
+                            <i class="fas fa-arrow-up up"></i> +15.2% dari bulan lalu
+                        </div>
+                    </div>
+                    <div class="dashboard-card" id="recycling-rate">
+                        <div class="dashboard-card-header">
+                            <h4>Tingkat Daur Ulang</h4>
+                            <div class="icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                        </div>
+                        <div class="dashboard-card-value">42%</div>
+                        <div class="dashboard-card-label">
+                            <i class="fas fa-arrow-up up"></i> +9.7% dari bulan lalu
+                        </div>
+                    </div>
+                    <div class="dashboard-card" id="sensors-active">
+                        <div class="dashboard-card-header">
+                            <h4>Sensor Aktif</h4>
+                            <div class="icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                        </div>
+                        <div class="dashboard-card-value">1245</div>
+                        <div class="dashboard-card-label">
+                            <i class="fas fa-arrow-up up"></i> +10.3% dari bulan lalu
+                        </div>
+                    </div>
+                    <div class="dashboard-card" id="co2-reduction">
+                        <div class="dashboard-card-header">
+                            <h4>Pengurangan CO₂</h4>
+                            <div class="icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                        <div class="dashboard-card-value">12.5 ton</div>
+                        <div class="dashboard-card-label">
+                            <i class="fas fa-arrow-up up"></i> +22.8% dari bulan lalu
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-chart">
+                    <div class="dashboard-chart-header">
+                        <h4>Volume Sampah Terkumpul berdasarkan Kategori</h4>
+                        <div class="dashboard-chart-period">
+                            <div class="period-btn" data-period="weekly">Mingguan</div>
+                            <div class="period-btn active" data-period="monthly">Bulanan</div>
+                            <div class="period-btn" data-period="yearly">Tahunan</div>
+                        </div>
+                    </div>
+                    <div id="waste-chart"></div>
+                </div>
+                <div class="dashboard-bins">
+                    <h4>Status Tempat Sampah Terkini</h4>
+                    <div class="bin-list">
+                        <div class="bin-status" data-fill="90">
+                            <div class="bin-info">
+                                <div class="bin-name">Tempat Sampah #001</div>
+                                <div class="bin-location">Jl. Sudirman No. 123</div>
+                            </div>
+                            <div class="bin-type">Organik</div>
+                            <div class="fill-bar">
+                                <div class="progress" style="width: 90%; background-color: #EA4335;"></div>
+                            </div>
+                            <div class="fill-text">90%</div>
+                            <div class="bin-action">
+                                <button class="btn-action"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="bin-status" data-fill="45">
+                            <div class="bin-info">
+                                <div class="bin-name">Tempat Sampah #002</div>
+                                <div class="bin-location">Jl. Thamrin No. 45</div>
+                            </div>
+                            <div class="bin-type">Plastik</div>
+                            <div class="fill-bar">
+                                <div class="progress" style="width: 45%; background-color: #FBBC05;"></div>
+                            </div>
+                            <div class="fill-text">45%</div>
+                            <div class="bin-action">
+                                <button class="btn-action"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="bin-status" data-fill="20">
+                            <div class="bin-info">
+                                <div class="bin-name">Tempat Sampah #003</div>
+                                <div class="bin-location">Jl. Gatot Subroto No. 67</div>
+                            </div>
+                            <div class="bin-type">Kertas</div>
+                            <div class="fill-bar">
+                                <div class="progress" style="width: 20%; background-color: #34A853;"></div>
+                            </div>
+                            <div class="fill-text">20%</div>
+                            <div class="bin-action">
+                                <button class="btn-action"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="bin-status" data-fill="75">
+                            <div class="bin-info">
+                                <div class="bin-name">Tempat Sampah #004</div>
+                                <div class="bin-location">Jl. Rasuna Said No. 89</div>
+                            </div>
+                            <div class="bin-type">Logam</div>
+                            <div class="fill-bar">
+                                <div class="progress" style="width: 75%; background-color: #FBBC05;"></div>
+                            </div>
+                            <div class="fill-text">75%</div>
+                            <div class="bin-action">
+                                <button class="btn-action"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="bin-status" data-fill="60">
+                            <div class="bin-info">
+                                <div class="bin-name">Tempat Sampah #005</div>
+                                <div class="bin-location">Jl. Kuningan No. 34</div>
+                            </div>
+                            <div class="bin-type">Organik</div>
+                            <div class="fill-bar">
+                                <div class="progress" style="width: 60%; background-color: #FBBC05;"></div>
+                            </div>
+                            <div class="fill-text">60%</div>
+                            <div class="bin-action">
+                                <button class="btn-action"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="show-more">
+                        <a href="#" class="btn btn-outline">Lihat Semua Tempat Sampah</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Peta Tempat Sampah Pintar</h2>
+                <p>Lokasi dan Status Real-time Tempat Sampah di Jakarta</p>
+            </div>
+            <div class="map-container" id="smart-bins-map">
+                <div class="map-overlay">
+                    <h3>Filter Tempat Sampah</h3>
+                    <div class="map-filters">
+                        <div class="map-filter">
+                            <input type="checkbox" id="filter-metal" data-type="metal" checked>
+                            <span class="filter-color blue"></span>
+                            <span>Logam</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-legend">
+                    <h3>Status Level</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #34A853;"></span>
+                            <span class="legend-text">Rendah (<40%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #FBBC05;"></span>
+                            <span class="legend-text">Sedang (40-75%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #EA4335;"></span>
+                            <span class="legend-text">Tinggi (>75%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="framework">
+        <div class="container">
+            <div class="section-header">
+                <h2>C-SMART Framework</h2>
+                <p>Arsitektur Multilayer untuk Sistem Pengelolaan Sampah Cerdas</p>
+            </div>
+            <div class="framework-tabs">
+                <div class="tabs-header">
+                    <div class="tab-btn active" data-tab="perception">
+                        <i class="fas fa-wifi"></i>
+                        <span>Persepsi</span>
+                    </div>
+                    <div class="tab-btn" data-tab="connectivity">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Konektivitas</span>
+                    </div>
+                    <div class="tab-btn" data-tab="data">
+                        <i class="fas fa-database"></i>
+                        <span>Data & Analitik</span>
+                    </div>
+                    <div class="tab-btn" data-tab="application">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Aplikasi</span>
+                    </div>
+                    <div class="tab-btn" data-tab="business">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Bisnis & Tata Kelola</span>
+                    </div>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-content active" id="perception">
+                        <div class="tab-img">
+                            <img src="/api/placeholder/500/300" alt="Perception Layer">
+                        </div>
+                        <div class="tab-text">
+                            <h3>Layer Persepsi</h3>
+                            <p>Layer persepsi mencakup perangkat sensing dan aktuasi yang mengumpulkan data dari lingkungan fisik dan berinteraksi dengannya.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Smart Waste Bins dengan sensor ultrasonik, berat, gas, dan kamera</li>
+                                <li><i class="fas fa-check-circle"></i> Vehicle Telematics untuk memantau lokasi, rute, dan konsumsi kendaraan</li>
+                                <li><i class="fas fa-check-circle"></i> Environmental Sensors untuk parameter lingkungan</li>
+                                <li><i class="fas fa-check-circle"></i> RFID/NFC Tags untuk pelacakan kontainer</li>
+                                <li><i class="fas fa-check-circle"></i> Automated Sorting System berbasis AI dan robotika</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="connectivity">
+                        <div class="tab-img">
+                            <img src="/api/placeholder/500/300" alt="Connectivity Layer">
+                        </div>
+                        <div class="tab-text">
+                            <h3>Layer Konektivitas</h3>
+                            <p>Layer konektivitas menyediakan infrastruktur komunikasi untuk transmisi data antara perangkat IoT, platform cloud, dan aplikasi pengguna.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> LPWAN (LoRaWAN/NB-IoT) untuk komunikasi jarak jauh dengan konsumsi daya rendah</li>
+                                <li><i class="fas fa-check-circle"></i> Cellular Networks (4G/5G) untuk komunikasi bandwidth tinggi</li>
+                                <li><i class="fas fa-check-circle"></i> WiFi/BLE untuk komunikasi jarak pendek</li>
+                                <li><i class="fas fa-check-circle"></i> Mesh Networks untuk ketahanan komunikasi</li>
+                                <li><i class="fas fa-check-circle"></i> Edge Computing untuk pre-processing data di sumber</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="data">
+                        <div class="tab-img">
+                            <img src="/api/placeholder/500/300" alt="Data & Analytics Layer">
+                        </div>
+                        <div class="tab-text">
+                            <h3>Layer Data & Analitik</h3>
+                            <p>Layer data dan analitik menangani penyimpanan, pemrosesan, dan analisis data dari berbagai sumber untuk menghasilkan insights dan mendukung pengambilan keputusan.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Cloud Platform untuk penyimpanan dan pemrosesan data</li>
+                                <li><i class="fas fa-check-circle"></i> Blockchain Layer untuk ketertelusuran material dan smart contracts</li>
+                                <li><i class="fas fa-check-circle"></i> Digital Twin untuk simulasi dan optimasi real-time</li>
+                                <li><i class="fas fa-check-circle"></i> Analytics Engine dengan algoritma AI dan machine learning</li>
+                                <li><i class="fas fa-check-circle"></i> Data Governance untuk mengelola kualitas, keamanan, dan privasi data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="application">
+                        <div class="tab-img">
+                            <img src="/api/placeholder/500/300" alt="Application Layer">
+                        </div>
+                        <div class="tab-text">
+                            <h3>Layer Aplikasi</h3>
+                            <p>Layer aplikasi menyediakan antarmuka pengguna dan layanan aplikasi yang memungkinkan interaksi stakeholders dengan sistem.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Administrator Dashboard untuk monitoring dan kontrol sistem</li>
+                                <li><i class="fas fa-check-circle"></i> Mobile Applications untuk petugas, operator, dan masyarakat</li>
+                                <li><i class="fas fa-check-circle"></i> Marketplace Platform untuk material daur ulang</li>
+                                <li><i class="fas fa-check-circle"></i> API Gateway untuk integrasi dengan sistem eksternal</li>
+                                <li><i class="fas fa-check-circle"></i> Decision Support System untuk pengambilan keputusan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="business">
+                        <div class="tab-img">
+                            <img src="/api/placeholder/500/300" alt="Business & Governance Layer">
+                        </div>
+                        <div class="tab-text">
+                            <h3>Layer Bisnis & Tata Kelola</h3>
+                            <p>Layer bisnis dan tata kelola mencakup model bisnis, struktur tata kelola, dan kerangka kebijakan yang mendukung operasi dan keberlanjutan sistem.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Circular Business Models yang mendukung ekonomi sirkular</li>
+                                <li><i class="fas fa-check-circle"></i> Multi-stakeholder Governance yang melibatkan semua pihak</li>
+                                <li><i class="fas fa-check-circle"></i> Policy Framework untuk adopsi teknologi dan ekonomi sirkular</li>
+                                <li><i class="fas fa-check-circle"></i> Capacity Building Programs untuk pengembangan kapasitas</li>
+                                <li><i class="fas fa-check-circle"></i> Monitoring and Evaluation Framework untuk mengukur kinerja</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Manfaat Implementasi</h2>
+                <p>Dampak Positif dari Sistem Pengelolaan Sampah Cerdas</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Lingkungan</h3>
+                    <ul>
+                        <li>Pengurangan emisi CO₂ sampai 30%</li>
+                        <li>Peningkatan tingkat daur ulang sampai 38%</li>
+                        <li>Pengurangan sampah ke TPA sampai 35%</li>
+                        <li>Pengurangan kontaminasi dalam aliran sampah</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Ekonomi</h3>
+                    <ul>
+                        <li>Pengurangan biaya operasional sampai 27%</li>
+                        <li>Peningkatan pendapatan dari material daur ulang</li>
+                        <li>Penciptaan lapangan kerja baru</li>
+                        <li>ROI yang tinggi dalam periode 5 tahun</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Sosial</h3>
+                    <ul>
+                        <li>Peningkatan partisipasi masyarakat</li>
+                        <li>Peningkatan kesadaran tentang ekonomi sirkular</li>
+                        <li>Perbaikan persepsi kebersihan lingkungan</li>
+                        <li>Inklusi pemulung informal ke sistem formal</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Perkotaan</h3>
+                    <ul>
+                        <li>Optimasi infrastruktur perkotaan</li>
+                        <li>Peningkatan kualitas layanan publik</li>
+                        <li>Dukungan untuk pencapaian target kebijakan nasional</li>
+                        <li>Transformasi menuju Circular City 5.0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Wujudkan Circular City 5.0 di Kota Anda</h2>
+                <p>Mari berkolaborasi untuk mengimplementasikan sistem pengelolaan sampah cerdas yang efisien, berkelanjutan, dan berdampak positif</p>
+                <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hubungi Kami</h2>
+                <p>Dapatkan Informasi Lebih Lanjut tentang C-SMART Framework</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Alamat</h3>
+                        <p>Jl. Teknologi Smart City No. 123<br>Jakarta 10110, Indonesia</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Telepon</h3>
+                        <p>+62 21 1234 5678<br>+62 812 3456 7890</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@csmart.id<br>support@csmart.id</p>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        <h2>C-SMART</h2>
+                    </div>
+                    <p>Circular Smart Waste Management with Advanced Real-time Technology untuk mendukung implementasi ekonomi sirkular dalam konteks Circular City 5.0.</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#map">Peta Sampah</a></li>
+                        <li><a href="#framework">Framework</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="#">Konsultasi</a></li>
+                        <li><a href="#">Implementasi</a></li>
+                        <li><a href="#">Pelatihan</a></li>
+                        <li><a href="#">Monitoring</a></li>
+                        <li><a href="#">Evaluasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Berlangganan newsletter kami untuk mendapatkan informasi terbaru tentang C-SMART Framework dan perkembangan Smart Waste Management.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Email Anda" required>
+                        <button type="submit" class="btn btn-primary">Berlangganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 C-SMART Framework. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
